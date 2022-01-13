@@ -7,7 +7,7 @@ Bucket_Name = "cliu201-bucket"
 Object_Name = "Dockerfile.tar.gz"
 Image_Name = "gcr.io/cliu201/getloggingtoken"
 SA_Mail="cliu201-sa@cliu201.iam.gserviceaccount.com"
-RUN_NAME="test-cloud-build-api"
+SERVICE_NAME="test-cloud-build-api"
 
 
 def main():
@@ -43,7 +43,7 @@ def main():
                     "args": ["build", "-t", Image_Name, "."]},
                     {"name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
                     "entrypoint": "gcloud",
-                    "args": ['run', 'deploy', RUN_NAME, '--image', Image_Name, 
+                    "args": ['run', 'deploy', SERVICE_NAME, '--image', Image_Name, 
                             '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated', '--port=3000',
                             f'--service-account={SA_Mail}']}]
 
