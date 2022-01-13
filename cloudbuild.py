@@ -30,7 +30,7 @@ def main():
         )
     )
 
-
+    # 3. build image, push image, deploy cloud run service
     """Create and execute a simple Google Cloud Build configuration,
     print the in-progress status and print the completed status."""
 
